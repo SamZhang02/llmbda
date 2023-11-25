@@ -21,7 +21,8 @@ def run():
     course_codes = []
     req_type = []
     reqs = []
-    tree = []
+    object_tree= []
+    json_tree = []
 
     index = 1 
     
@@ -43,11 +44,11 @@ def run():
                 numbers = re.findall(COURSE_NUMBER_PATTERN, prereq)
 
                 if len(codes) == 1 and len(numbers) == 1:
-                    tree.append(f'["{codes[0]}"]')
+                    object_tree.append(f'["{codes[0]}"]')
+                    json_tree.append(json.dumps({'prerequisites':codes[0]}))
                 else:
-                    tree.append("[]")
-
-
+                    object_tree.append("[]")
+                    json_tree.append("{}")
 
             if coreq and re.search(COURSE_CODE_PATTERN,coreq):
                 course_codes.append(course['_id'])
@@ -60,16 +61,18 @@ def run():
                 numbers = re.findall(COURSE_NUMBER_PATTERN, coreq)
 
                 if len(codes) == 1 and len(numbers) == 1:
-                    tree.append(f'["{codes[0]}"]')
+                    object_tree.append(f'["{codes[0]}"]')
+                    json_tree.append(json.dumps({'corequisites':codes[0]}))
                 else:
-                    tree.append("[]")
+                    object_tree.append("[]")
+                    json_tree.append("{}")
 
     with open('./requisites.csv', 'w') as csv:
-        csv.write('index,course,req_type,requisite, requisite_tree\n')
+        csv.write('index,course,req_type,requisite, object_tree, json_tree\n')
         for i in range(len(indices)):
-            csv.write(f'{indices[i]},"{course_codes[i]}",{req_type[i]},"{reqs[i]}", "{tree[i]}"\n')
+            csv.write(f'{indices[i]},"{course_codes[i]}",{req_type[i]},"{reqs[i]}", "{object_tree[i]},"{json_tree[i]}"\n')
 
-        print(f"Auto-labeled {len([leaf for leaf in tree if leaf != '[]'])} leaves.")
+        print(f"Auto-labeled {len([leaf for leaf in object_tree if leaf != '[]'])} leaves.")
 
 if __name__ == '__main__':
     run()
