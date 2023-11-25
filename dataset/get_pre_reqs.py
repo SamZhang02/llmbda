@@ -10,6 +10,11 @@ COURSE_CODE_PATTERN = re.compile(
     r"([A-Z0-9]{4} [0-9]{3}(?:D1|D2|N1|N2|J1|J2|J3)?)"
 )
 
+COURSE_NUMBER_PATTERN = re.compile(
+    r"([0-9]{3}(?:D1|D2|N1|N2|J1|J2|J3)?)"
+)
+
+
 def run():
 
     indices = []
@@ -24,41 +29,47 @@ def run():
         courses = json.load(f)
 
         for course in courses:
-            prereq = course['prerequisitesText'] 
-            coreq = course['corequisitesText']
+            prereq = clean_html(course['prerequisitesText']) if course['prerequisitesText'] else None
+            coreq = clean_html(course['corequisitesText']) if course['corequisitesText'] else None
 
             if prereq and re.search(COURSE_CODE_PATTERN,prereq):
                 course_codes.append(course['_id'])
                 req_type.append(1)
-                reqs.append(clean_html(prereq))
+                reqs.append(prereq)
                 indices.append(index)
                 index += 1
                 
                 codes = re.findall(COURSE_CODE_PATTERN, prereq)
-                if len(codes) > 1:
-                    tree.append("[]")
-                else:
+                numbers = re.findall(COURSE_NUMBER_PATTERN, prereq)
+
+                if len(codes) == 1 and len(numbers) == 1:
                     tree.append(f'["{codes[0]}"]')
+                else:
+                    tree.append("[]")
 
 
 
             if coreq and re.search(COURSE_CODE_PATTERN,coreq):
                 course_codes.append(course['_id'])
                 req_type.append(2)
-                reqs.append(clean_html(coreq))
+                reqs.append(coreq)
                 indices.append(index)
                 index += 1
 
                 codes = re.findall(COURSE_CODE_PATTERN, coreq)
-                if len(codes) > 1:
-                    tree.append("[]")
-                elif len(codes) == 1:
+                numbers = re.findall(COURSE_NUMBER_PATTERN, coreq)
+
+                if len(codes) == 1 and len(numbers) == 1:
                     tree.append(f'["{codes[0]}"]')
+                else:
+                    tree.append("[]")
 
     with open('./requisites.csv', 'w') as csv:
         csv.write('index,course,req_type,requisite, requisite_tree\n')
         for i in range(len(indices)):
             csv.write(f'{indices[i]},"{course_codes[i]}",{req_type[i]},"{reqs[i]}", "{tree[i]}"\n')
+
+        print(f"Auto-labeled {len([leaf for leaf in tree if leaf != '[]'])} leaves.")
 
 if __name__ == '__main__':
     run()
