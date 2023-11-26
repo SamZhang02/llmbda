@@ -1,5 +1,5 @@
 import json
-import regex as re
+import re
 
 
 def clean_html(text):
@@ -74,7 +74,7 @@ def run():
         csv.write("index,course,req_type,requisite, object_tree, json_tree\n")
         for i in range(len(indices)):
             csv.write(
-                f'{indices[i]},"{course_codes[i]}",{req_type[i]},"{reqs[i]}", "{object_tree[i]},"{json_tree[i]}"\n'
+                f'{indices[i]},"{course_codes[i]}",{req_type[i]},"{reqs[i]}", "{object_tree[i]}", "{json_tree[i]}"\n'
             )
 
         print(
