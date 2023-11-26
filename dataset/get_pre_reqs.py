@@ -1,5 +1,6 @@
 import json
 import re
+from dataclasses import dataclass
 
 
 def clean_html(text):
@@ -11,13 +12,19 @@ COURSE_CODE_PATTERN = re.compile(r"([A-Z0-9]{4} [0-9]{3}(?:D1|D2|N1|N2|J1|J2|J3)
 COURSE_NUMBER_PATTERN = re.compile(r"([0-9]{3}(?:D1|D2|N1|N2|J1|J2|J3)?)")
 
 
+@dataclass
+class CourseInfo:
+    index: int
+    course: str
+    req_type: int
+    requisite: str
+    object_tree: str = "[]"
+    json_tree: str = "{}"
+
+
 def run():
-    indices = []
-    course_codes = []
-    req_type = []
-    reqs = []
-    object_tree = []
-    json_tree = []
+    autolabelled: list[CourseInfo] = []
+    to_label: list[CourseInfo] = []
 
     index = 1
 
@@ -37,49 +44,53 @@ def run():
             )
 
             if prereq and re.search(COURSE_CODE_PATTERN, prereq):
-                course_codes.append(course["_id"])
-                req_type.append(1)
-                reqs.append(prereq)
-                indices.append(index)
+                course_info = CourseInfo(
+                    index=index, course=course["_id"], req_type=1, requisite=prereq
+                )
                 index += 1
 
                 codes = re.findall(COURSE_CODE_PATTERN, prereq)
                 numbers = re.findall(COURSE_NUMBER_PATTERN, prereq)
 
                 if len(codes) == 1 and len(numbers) == 1:
-                    object_tree.append(f'["{codes[0]}"]')
-                    json_tree.append(json.dumps({"prerequisites": codes[0]}))
+                    course_info.object_tree = f'["{codes[0]}"]'
+                    course_info.json_tree = json.dumps({"prerequisites": codes[0]})
+                    autolabelled.append(course_info)
                 else:
-                    object_tree.append("[]")
-                    json_tree.append("{}")
+                    to_label.append(course_info)
 
             if coreq and re.search(COURSE_CODE_PATTERN, coreq):
-                course_codes.append(course["_id"])
-                req_type.append(2)
-                reqs.append(coreq)
-                indices.append(index)
+                course_info = CourseInfo(
+                    index=index, course=course["_id"], req_type=2, requisite=coreq
+                )
                 index += 1
 
                 codes = re.findall(COURSE_CODE_PATTERN, coreq)
                 numbers = re.findall(COURSE_NUMBER_PATTERN, coreq)
 
                 if len(codes) == 1 and len(numbers) == 1:
-                    object_tree.append(f'["{codes[0]}"]')
-                    json_tree.append(json.dumps({"corequisites": codes[0]}))
+                    course_info.object_tree = f'["{codes[0]}"]'
+                    course_info.json_tree = json.dumps({"corequisites": codes[0]})
+                    autolabelled.append(course_info)
                 else:
-                    object_tree.append("[]")
-                    json_tree.append("{}")
+                    to_label.append(course_info)
 
-    with open("./requisites.csv", "w") as csv:
-        csv.write("index,course,req_type,requisite, object_tree, json_tree\n")
-        for i in range(len(indices)):
+    with open("./autolabelled.csv", "w") as csv:
+        csv.write("index,course,req_type,requisite,object_tree,json_tree\n")
+        for c in autolabelled:
             csv.write(
-                f'{indices[i]}, "{course_codes[i]}", {req_type[i]}, "{reqs[i]}", "{object_tree[i]}", "{json_tree[i]}"\n'
+                f'{c.index},"{c.course}",{c.req_type},"{c.requisite}","{c.object_tree}","{c.json_tree}"\n'
             )
 
-        print(
-            f"Auto-labeled {len([leaf for leaf in object_tree if leaf != '[]'])} leaves."
-        )
+        print(f"Auto-labeled {len(autolabelled)} leaves.")
+
+    with open("./to_label.csv", "w") as csv:
+        csv.write("index,course,req_type,requisite,object_tree,json_tree\n")
+        for c in to_label:
+            csv.write(
+                f'{c.index},"{c.course}",{c.req_type},"{c.requisite}","{c.object_tree}","{c.json_tree}"\n'
+            )
+        print(f"{len(to_label)} left to label.")
 
 
 if __name__ == "__main__":
