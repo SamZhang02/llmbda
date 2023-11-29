@@ -25,7 +25,7 @@ index,course,req_type,requisite,object_tree,json_tree
 74,"AGRI550",1,"Prerequisites: HISP 218 or equivalent; MATH 203 or AEMA 310 or equivalent ","['&', 'HISP 218', ['|', 'MATH 203', 'AEMA 310']]","{}"
 76,"ANAT214",1,"Prerequisites: BIOL 112 (or CEGEP equivalent), PHGY 209 and PHGY 210","['&', 'BIOL 112', 'PHGY 209', 'PHGY 210']","{}"
 78,"ANAT262",2,"Corequisites: ANAT 212 or BIOC 212 or BIOL 201","['|', 'ANAT 212', 'BIOC 212', 'BIOL 201']","{}"
-81,"ANAT321",1,"Prerequisites: ANAT/BIOC 212 or BIOL 201; and one of PHGY 209, NSCI 200 or PSYC 211; or permission of instructor","[&, ['|', 'ANAT 212', 'BIOC 212', 'BIOL 201'], ['|', 'PHGY 209', 'NSCI 200', 'PSYC 211']]","{}"
+81,"ANAT321",1,"Prerequisites: ANAT/BIOC 212 or BIOL 201; and one of PHGY 209, NSCI 200 or PSYC 211; or permission of instructor","['&', ['|', 'ANAT 212', 'BIOC 212', 'BIOL 201'], ['|', 'PHGY 209', 'NSCI 200', 'PSYC 211']]","{}"
 83,"ANAT323",1,"Prerequisites for Honours Anatomy &amp; Cell Biology students: ANAT 214 and ANAT 314.","['&', 'ANAT 214', 'ANAT 314']","{}"
 84,"ANAT365",1,"Prerequisites: ANAT 261, ANAT 262, PHGY 209, or by permission of instructor","['&', 'ANAT 261', 'ANAT 262', 'PHGY 209']","{}"
 85,"ANAT381",1,"Prerequisites: ANAT 261, BIOL 202 or permission of instructor","['&', 'ANAT 261', 'BIOL 202']","{}"
