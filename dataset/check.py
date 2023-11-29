@@ -29,34 +29,40 @@ def validate(node):
                 validate(child)
 
 
-data = load_csv("labelled.csv")
+def main():
+    data_file = sys.argv[1]
+    data = load_csv(data_file)
 
-errors = 0
-for row in data[:100]:
-    try:
-        tree = ast.literal_eval(row["object_tree"])
-    except Exception as e:
-        print(
-            f"(Index {row['index']}) Failed to parse object_tree for {row['course']}: {e}",
-            file=sys.stderr,
-        )
-        errors += 1
-        continue
+    errors = 0
+    for row in data:
+        try:
+            tree = ast.literal_eval(row["object_tree"])
+        except Exception as e:
+            print(
+                f"(Index {row['index']}) Failed to parse object_tree for {row['course']}: {e}",
+                file=sys.stderr,
+            )
+            errors += 1
+            continue
 
-    if tree == []:
-        continue
+        if tree == []:
+            continue
 
-    try:
-        validate(tree)
-    except ValueError as e:
-        print(
-            f"(Index {row['index']}) Validation error for {row['course']}: {e}",
-            file=sys.stderr,
-        )
-        errors += 1
+        try:
+            validate(tree)
+        except ValueError as e:
+            print(
+                f"(Index {row['index']}) Validation error for {row['course']}: {e}",
+                file=sys.stderr,
+            )
+            errors += 1
 
-if errors > 0:
-    print(f"Data validation failed for {errors}")
-    sys.exit(1)
+    if errors > 0:
+        print(f"Data validation failed for {errors} reqs!")
+        sys.exit(1)
 
-print("Labelled data passed validation.")
+    print("Labelled data passed validation.")
+
+
+if __name__ == "__main__":
+    main()
