@@ -14,14 +14,15 @@ with open('./labelled.csv',"w") as f:
             fixed.append(line)
             continue
 
-        codes = [x for x in re.findall(DOUBLE_QUOTED_COURSE_CODE_PATTERN,line)]
+        codes = re.findall(DOUBLE_QUOTED_COURSE_CODE_PATTERN,line)
 
         for code in codes:
             line = line.replace(code, code.replace("\"", "\'"))\
-                .replace("\"&\"", "\'&\'")\
-                .replace("\"|\"", "\'|\'")
-        fixed.append(line)
 
+        line = line.replace("\"&\"", "\'&\'")\
+                   .replace("\"|\"", "\'|\'")
+
+        fixed.append(line)
 
     f.writelines(fixed)
 
