@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  labelled-data-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout repository
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      
+      - name: Validate labelled data
+        run: |
+          cd dataset
+          python check.py labelled.csv
