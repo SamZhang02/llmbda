@@ -19,10 +19,6 @@ def validate(node):
             if m is None:
                 raise ValueError(f"Invalid course code {node}")
         case list():
-            if len(node) == 1: # case for single course tree
-                validate(node[0])
-                return 
-
             if node[0] not in ["&", "|"]:
                 raise ValueError(f"Invalid operator {node[0]}")
 
