@@ -802,7 +802,7 @@ index,course,req_type,requisite,object_tree,json_tree
 1870,"EDFE306",1,"Prerequisites: EDEE 275, EDEE 223, EDEE 250, EDEE 282, EDEC 215, (EDFE 256 or EDFE 256D1/D2), (EDEC 253 or EDEC 253D1/D2).","['&', 'EDEE 275', 'EDEE 223', 'EDEE 250', 'EDEE 282', 'EDEC 215', ['|', 'EDFE 256', ['&', 'EDFE 256D1', 'EDFE 256D2']], ['|', 'EDEC 253', ['&', 'EDEC 253D1', 'EDEC 253D2']]]","{}"
 1871,"EDFE306",2,"Corequisites: EDEE 353, EDEE 355.","[]","{}"
 1872,"EDFE308",1,"Prerequisites: EDEC 215, EDFE 208.","[]","{}"
-1873,"EDFE351",1,"Prerequisites: EDEC 215, (EDFE 254 or EDFE 254D1/D2), (EDEC 254 or EDEC 254D1/D2), (EDES 334 or EDES 335 or EDES 353 or EDES 361).","['&', ['|', 'EDFE 254', ['&', 'EDFE 254D1', 'EDFE 254D2'], ['|', 'EDEC 254', ['&', 'EDEC 254D1', 'EDEC 254D2']], ['|', 'EDES 334', 'EDES 335', 'EDES 353', 'EDES 361']]","{}"
+1873,"EDFE351",1,"Prerequisites: EDEC 215, (EDFE 254 or EDFE 254D1/D2), (EDEC 254 or EDEC 254D1/D2), (EDES 334 or EDES 335 or EDES 353 or EDES 361).","['&', ['|', 'EDFE 254', ['&', 'EDFE 254D1', 'EDFE 254D2']], ['|', 'EDEC 254', ['&', 'EDEC 254D1', 'EDEC 254D2']], ['|', 'EDES 334', 'EDES 335', 'EDES 353', 'EDES 361']]","{}"
 1874,"EDFE351",2,"Corequisites: EDEC 351, EDES 350.","[]","{}"
 1875,"EDFE359",1,"Prerequisites: EDEC 215, (EDSL 254 or EDSL 255D1, EDSL 255D2 or EDSL 259D1, EDSL 259D2), (EDFE 255 or EDFE 259 or EDFE 259D1, EDFE 259D2).","['&', 'EDEC 215', ['|', 'EDSL 254', 'EDSL 255D1', 'EDSL 255D2', 'EDSL 259D1', 'EDSL 259D2'], ['|', 'EDFE 255', 'EDFE 259', 'EDFE 259D1', 'EDFE 259D2']]","{}"
 1878,"EDFE380",1,"Prerequisites: EDFE 373, EDEC 215.","[]","{}"
