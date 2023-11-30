@@ -17,7 +17,7 @@ def validate(node):
         case str():
             m = COURSE_CODE_PATTERN.fullmatch(node)
             if m is None:
-                raise ValueError(f"Invalid course code {m}")
+                raise ValueError(f"Invalid course code {node}")
         case list():
             if len(node) == 1: # case for single course tree
                 validate(node[0])
