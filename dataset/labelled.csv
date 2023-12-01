@@ -295,7 +295,7 @@ index,course,req_type,requisite,object_tree,json_tree
 682,"CCPA621",1,"Prerequisite(s): CCPA 601, CCPA 602 and CCPA 631.","[]","{}"
 683,"CCPA623",1,"Prerequisite(s): CCPA 601, CCPA 602 and CCPA 631.","[]","{}"
 684,"CCPA624",1,"Prerequisite(s): CCPA 601, CCPA 602 and CCPA 631.","[]","{}"
-686,"CCPA641",1,"Prerequisite(s): CCPA 601, CCPA 602 and CCPA 631; and two of CCPA 621, CCPA 622, CCPA 623, and CCPA 624.","['&', 'CCPA 601', 'CCPA 601', 'CCPA 631', ['|', ['&', 'CCPA 621', 'CCPA 622'], ['&', 'CCPA 621', 'CCPA 623'], ['&', 'CCPA 621', 'CCPA 624'], ['&', 'CCPA 622', 'CCPA 623'], ['&', 'CCPA 622', 'CCPA 624'], ['&', 'CCPA 623', 'CCPA 624']]]","{}" 
+686,"CCPA641",1,"Prerequisite(s): CCPA 601, CCPA 602 and CCPA 631; and two of CCPA 621, CCPA 622, CCPA 623, and CCPA 624.","['&', 'CCPA 601', 'CCPA 601', 'CCPA 631', ['|', ['&', 'CCPA 621', 'CCPA 622'], ['&', 'CCPA 621', 'CCPA 623'], ['&', 'CCPA 621', 'CCPA 624'], ['&', 'CCPA 622', 'CCPA 623'], ['&', 'CCPA 622', 'CCPA 624'], ['&', 'CCPA 623', 'CCPA 624']]]","{}"
 688,"CCPA642",1,"Prerequisite(s): CCPA 601, CCPA 602 and CCPA 631; and two of CCPA 621, CCPA 622, CCPA 623, and CCPA 624.","[]","{}"
 690,"CCTR225",2,"Corequisite(s): CCTR 217 or CCTR 219 or CCTR 310 or CCTR 233 or CCTR 234","[]","{}"
 691,"CCTR226",2,"Corequisite: CCTR 217 or CCTR 219 or CCTR 310 or CCTR 233 or CCTR 234","[]","{}"
