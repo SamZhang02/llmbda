@@ -206,7 +206,7 @@ index,course,req_type,requisite,object_tree,json_tree
 447,"BIOL585",1,"Prerequisites: BIOL 308 and BIOL 434 or permission of instructor.","[]","{}"
 448,"BIOL588",1,"Prerequisite: BIOL 300 and BIOL 306 or permission ","[]","{}"
 451,"BIOL594",1,"Prerequisite: BIOL 304 and BIOL 308","[]","{}"
-453,"BIOL597",1,"Prerequisites: BIOL 373 or equivalent, and permission of instructor; BIOL 596 recommended","'BIOL 373'","{}"q
+453,"BIOL597",1,"Prerequisites: BIOL 373 or equivalent, and permission of instructor; BIOL 596 recommended","'BIOL 373'","{}"
 458,"BIOS602",1,"Prerequisites: Permission of instructor.  MATH 556 and BIOS 601, or their equivalents.","['&', 'MATH 556', 'BIOL 601']","{}"
 459,"BIOS612",1,"Prerequisites: BIOS 611 or MATH 533; and MATH 523, or equivalents.","['&', ['|', 'BIOL 611', 'MATH 533'], 'MATH 523']","{}"
 461,"BIOS624",1,"Prerequisites: MATH 533 Analysis of Variance and Regression.  MATH 523 Generalized Linear Models.","['&', 'MATH 533', 'MATH 523']","{}"
