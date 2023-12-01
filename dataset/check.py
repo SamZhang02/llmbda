@@ -17,12 +17,8 @@ def validate(node):
         case str():
             m = COURSE_CODE_PATTERN.fullmatch(node)
             if m is None:
-                raise ValueError(f"Invalid course code {m}")
+                raise ValueError(f"Invalid course code {node}")
         case list():
-            if len(node) == 1: # case for single course tree
-                validate(node[0])
-                return 
-
             if node[0] not in ["&", "|"]:
                 raise ValueError(f"Invalid operator {node[0]}")
 
@@ -37,10 +33,12 @@ def main():
     data_file = sys.argv[1]
     data = load_csv(data_file)
 
+    labeled_count = 0
     errors = 0
     for row in data:
         try:
             tree = ast.literal_eval(row["object_tree"])
+            labeled_count += 1 if tree else 0
         except Exception as e:
             print(
                 f"(Index {row['index']}) Failed to parse object_tree for {row['course']}: {e}",
@@ -65,7 +63,7 @@ def main():
         print(f"Data validation failed for {errors} reqs!")
         sys.exit(1)
 
-    print("Labelled data passed validation.")
+    print(f"{labeled_count} labelled data passed validation.")
 
 
 if __name__ == "__main__":
