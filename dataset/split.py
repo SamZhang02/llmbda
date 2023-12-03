@@ -10,8 +10,9 @@ autolabelled = pd.read_csv('autolabelled.csv')
 
 labelled = labelled.loc[(labelled['object_tree'] != '[]')]
 autolabelled = autolabelled.loc[(autolabelled['object_tree'] != '[]')]
+autolabelled['json_tree'] = '{}'
 
-autolabelled=autolabelled.sample(frac=0.25)
+autolabelled=autolabelled.sample(frac=0.25, random_state=1)
 
 data = pd.concat([labelled, autolabelled])
 
@@ -21,6 +22,3 @@ train, valid = train_test_split(train, test_size=0.125,random_state=1, shuffle=T
 train.to_csv(train_path)
 test.to_csv(test_path)
 valid.to_csv(dev_path)
-
-
-
