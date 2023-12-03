@@ -1,0 +1,193 @@
+,index,course,req_type,requisite,object_tree,json_tree
+1407,3260,MECH539,1,"Prerequisite: MECH 309 or MATH 317, MECH 533.","['&', ['|', 'MECH 309', 'MATH 317'], 'MECH 533']",{}
+1501,2686,HIST410,1,Prerequisite: A prior course on history of science or HPSC 300 or permission of Instructor.,'HPSC 300',"{prerequisites"": 'HPSC 300'}"""
+2424,4190,PHYS241,1,Prerequisite: CEGEP physics or PHYS 142.,'PHYS 142',"{prerequisites"": 'PHYS 142'}"""
+2469,4285,POLI368,1,Prerequisites: POLI 231,'POLI 231',"{prerequisites"": 'POLI 231'}"""
+2420,4184,PHYS142,1,Prerequisite: PHYS 131.,'PHYS 131',"{prerequisites"": 'PHYS 131'}"""
+2030,3563,MUHL385,1,Prerequisites: MUHL 286,'MUHL 286',"{prerequisites"": 'MUHL 286'}"""
+690,1182,CMSC310,1,Prerequisite: CMSC 000,'CMSC 000',"{prerequisites"": 'CMSC 000'}"""
+612,1074,CIVE385,1,Prerequisite: CIVE 284.,'CIVE 284',"{prerequisites"": 'CIVE 284'}"""
+35,98,ANAT697,1,Prerequisites: ANAT 695 and ANAT 696,"['&', 'ANAT 695', 'ANAT 696']",{}
+81,197,ARCH447,1,"Prerequisite(s): ARCH 240, ARCH 378","['&', 'ARCH 240', 'ARCH 378']",{}
+2474,4301,POLI445,1,Prerequisites: POLI 243 or permission of the instructor.,'POLI 243',"{prerequisites"": 'POLI 243'}"""
+838,1443,DENT528D1,1,Prerequisite(s): DENT 527,'DENT 527',"{prerequisites"": 'DENT 527'}"""
+1023,2463,GEOG384,1,Prerequisite(s): GEOG 201; GEOG 333 or COMP 202; and GEOG 314; or permission of the instructor.,"['&', 'GEOG 201', ['|', 'GEOG 333', 'COMP 202'], 'GEOG 314']",{}
+172,401,BIOL428,2,Corequisite(s): NRSC/BIOL 451 and ANTH/GEOG 451,"['&', ['|', 'NRSC 451', 'BIOL 451'], ['|', 'ANTH 451', 'GEOG 451']]",{}
+2745,4712,WRIT005D2,1,Prerequisite: WRIT 005D1,'WRIT 005D1',"{prerequisites"": 'WRIT 005D1'}"""
+2148,3717,MUSP240,2,Corequisite: MUTH 250,'MUTH 250',"{corequisites"": 'MUTH 250'}"""
+166,394,BIOL395,1,Prerequisites: BIOL 219; or BIOL 200 plus BIOL 201 or ANAT 212 or BIOC 212; CHEM 212; COMP 202 or COMP 204 or COMP 250; MATH 222; or permission of instructor.,"['&', ['|', 'BIOL 219', ['&', 'BIOL 200', 'BIOL 201'], 'ANAT 212', 'BIOC 212'], 'CHEM 212', ['|', 'COMP 202', 'COMP 204', 'COMP 250'], 'MATH 222']",{}
+470,829,CEGL370,2,Corequisite(s): CEGL 371,'CEGL 371',"{corequisites"": 'CEGL 371'}"""
+493,862,CFIN512,2,Corequisite(s): CMS2 621,'CMS2 621',"{corequisites"": 'CMS2 621'}"""
+97,264,ATOC517,1,"Prerequisites: MATH 314, MATH 315, and one of ATOC 312 or ATOC 315 or ATOC 512, or permission of the instructor.","['&', 'MATH 314', 'MATH 315', ['|', 'ATOC 312', 'ATOC 315', 'ATOC 512']]",{}
+1346,3149,MATH463,1,Prerequisites: MATH 223 or MATH 247 or MATH 236 or MATH 251. MATH 248 or MATH 314 or MATH 358. MATH 243 or MATH 255. COMP 202 or COMP 204 or COMP 208 or equivalent.,"['&', ['|', 'MATH 223', 'MATH 247', 'MATH 236', 'MATH 251'], ['|', 'MATH 248', 'MATH 314', 'MATH 358'], ['|', 'MATH 243', 'MATH 255'], ['|', 'COMP 202', 'COMP 204', 'COMP 208']]",{}
+848,1454,DENT582J2,1,Prerequisite: DENT 582J1,'DENT 582J1',"{prerequisites"": 'DENT 582J1'}"""
+2664,4603,SOCI345,1,Prerequisite: SOCI 210 ,'SOCI 210',"{prerequisites"": 'SOCI 210'}"""
+93,260,ATOC473,2,"Corequisite(s): GEOG 373, EPSC 373 and ATOC 373","['&', 'GEOG 373', 'EPSC 373', 'ATOC 373']",{}
+376,659,CCFA670,1,Prerequisites: CCFA 655 or exemption by examination.,'CCFA 655',"{prerequisites"": 'CCFA 655'}"""
+1611,2833,INFS620,1,Prerequisite(s): INFS 601,'INFS 601',"{prerequisites"": 'INFS 601'}"""
+1443,3355,MIME352,1,"Prerequisites: CHEM 233, MIME 212, MIME 200 or MIME 250, and MIME 356","['&', 'CHEM 233', 'MIME 212', ['|', 'MIME 200', 'MIME 250'], 'MIME 356']",{}
+550,957,CHEM211,1,Prerequisite: CHEM 110 or equivalent.,'CHEM 110',"{prerequisites"": 'CHEM 110'}"""
+34,93,ANAT541,1,"Prerequisites: ANAT 212 (or BIOC 212 or BIOL 201), ANAT 261, ANAT 262, or permission of instructor.","['&', ['|', 'ANAT 212', 'BIOC 212', 'BIOL 201'], 'ANAT 261', 'ANAT 262']",{}
+263,490,BREE485,1,Prerequisite: BREE 453,'BREE 453',"{prerequisites"": 'BREE 453'}"""
+7,11,ACCT453,1,Prerequisite: ACCT 352,'ACCT 352',"{prerequisites"": 'ACCT 352'}"""
+1398,3240,MECH419,1,"Prerequisites: MECH 220, CIVE 207, MATH 264, MATH 271.","['&', 'MECH 220', 'CIVE 207', 'MATH 264', 'MATH 271']",{}
+41,110,ANSC420,1,Prerequisites: LSCI 202 and LSCI 230,"['&', 'LSCI 202', 'LSCI 230']",{}
+1843,3246,MECH497,1,Prerequisites: MECH 393 and completion of 45 credits ,'MECH 393',"{prerequisites"": 'MECH 393'}"""
+17,51,AEPH114,2,"Corequisite: AEMA 102 (or MATH 141 or higher level calculus course) or CEGEP objective 00UP, or permission of instructor.","['|', 'AEMA 102', 'MATH 141']",{}
+1516,2716,HIST555D2,1,Prerequisite: HIST 555D1,'HIST 555D1',"{prerequisites"": 'HIST 555D1'}"""
+1922,3378,MIME481,1,Prerequisites: MIME 480. Department permission required.,'MIME 480',"{prerequisites"": 'MIME 480'}"""
+1776,3088,MATH223,1,Prerequisite: MATH 133 or equivalent ,'MATH 133',"{prerequisites"": 'MATH 133'}"""
+1373,3193,MATH583,1,Prerequisite(s): MATH 456 and MATH 576 or equivalent or permission of instructor.,"['&', 'MATH 456', 'MATH 576']",{}
+1677,2932,ISLA502,1,Prerequisite(s): ISLA 320 or permission of instructor.,'ISLA 320',"{prerequisites"": 'ISLA 320'}"""
+1289,2229,EPSC231,1,"Prerequisite: EPSC 240, or permission of the instructor.",'EPSC 240',"{prerequisites"": 'EPSC 240'}"""
+1036,1811,EDEC403,1,Prerequisite: EDEE 344 ,'EDEE 344',"{prerequisites"": 'EDEE 344'}"""
+1107,2587,HISP438,1,"Prerequisite: Successful completion of any Survey of Literature (HISP 241, HISP 242, HISP 243, HISP 244) or permission of the instructor","['|', 'HISP 241', 'HISP 242', 'HISP 243', 'HISP 244']",{}
+2223,3850,NUR1331,2,Corequisite(s): NUR1 335,'NUR1 335',"{corequisites"": 'NUR1 335'}"""
+1018,2458,GEOG360,1,Prerequisites: ENVR 201 or equivalent; and GEOG 203 or ENVR 200 or ESYS 200 or equivalent; or permission of instructor,"['&', 'ENVR 201', ['|', 'GEOG 203', 'ENVR 200', 'ESYS 200']]",{}
+1823,3204,MATH669D2,1,Prerequisite: MATH 669D1,'MATH 669D1',"{prerequisites"": 'MATH 669D1'}"""
+405,717,CCTR554,1,Prerequisite: CCTR 541,'CCTR 541',"{prerequisites"": 'CCTR 541'}"""
+2443,4229,PHYS457,1,Prerequisite: PHYS 357,'PHYS 357',"{prerequisites"": 'PHYS 357'}"""
+1447,2486,GEOG492N2,1,Prerequisite: GEOG 492N1,'GEOG 492N1',"{prerequisites"": 'GEOG 492N1'}"""
+2618,4538,RELG495,1,Prerequisite: RELG 494 and permission of the Chair of the B.Th. Committee ,'RELG 494',"{prerequisites"": 'RELG 494'}"""
+217,471,BMDE520,1,"Prerequisite: MATH 203, MATH 223, MATH 323, and one course in computer programming (or equivalent background with permission of instructor).","['&', 'MATH 203', 'MATH 323']",{}
+541,1256,COMP579,1,"Prerequisite: A university level course in machine learning such as COMP 451 or COMP 551. Background in calculus, linear algebra, probability at the level of MATH 222, MATH 223, MATH 323, respectively.","['&', ['|', 'COMP 451', 'COMP 551'], 'MATH 222', 'MATH 223', 'MATH 323']",{}
+2373,4110,PHGY451,1,Prerequisite: PHGY 311 or equivalent,'PHGY 311',"{prerequisites"": 'PHGY 311'}"""
+2407,4169,PHTH645,1,Prerequisite: PHTH 623,'PHTH 623',"{prerequisites"": 'PHTH 623'}"""
+235,422,BIOL480D2,1,Prerequisite: BIOL 480D1,'BIOL 480D1',"{prerequisites"": 'BIOL 480D1'}"""
+2275,3940,NUR2691,1,Prerequisite: NUR2 690,'NUR2 690',"{prerequisites"": 'NUR2 690'}"""
+713,1251,COMP564,1,Prerequisite: COMP 462.,'COMP 462',"{prerequisites"": 'COMP 462'}"""
+344,614,CATH315,1,"Prerequisite: CATH 200, or permission of instructor ",'CATH 200',"{prerequisites"": 'CATH 200'}"""
+2610,4526,RELG444,1,Prerequisite(s): RELG 252 or permission of instructor,'RELG 252',"{prerequisites"": 'RELG 252'}"""
+2639,4575,RUSS453,1,Prerequisite: RUSS 452 or equivalent ,'RUSS 452',"{prerequisites"": 'RUSS 452'}"""
+1915,3363,MIME421,1,Prerequisites: MIME 323 and instructor permission,'MIME 323',"{prerequisites"": 'MIME 323'}"""
+1995,3491,MUAR202,1,Prerequisite: MUAR 201 or permission of instructor ,'MUAR 201',"{prerequisites"": 'MUAR 201'}"""
+6,30,ACCT689,1,"Prerequisite: ACCT 653, ACCT 654, ACCT 663, ACCT 664","['&', 'ACCT 653', 'ACCT 654', 'ACCT 663', 'ACCT 664']",{}
+916,1529,EAST700D2,1,Prerequisite: EAST 700D1,'EAST 700D1',"{prerequisites"": 'EAST 700D1'}"""
+957,1623,ECSE210,1,Prerequisite: ECSE 200 ,'ECSE 200',"{prerequisites"": 'ECSE 200'}"""
+2750,4717,WRIT017D2,1,Prerequisite: WRIT 017D1,'WRIT 017D1',"{prerequisites"": 'WRIT 017D1'}"""
+2298,3982,NUTR506,1,Prerequisite: NUTR 551,'NUTR 551',"{prerequisites"": 'NUTR 551'}"""
+1283,2223,EPIB705,1,Prerequisite(s): EPIB 704,'EPIB 704',"{prerequisites"": 'EPIB 704'}"""
+2511,4364,PSYC341,1,"Prerequisites: Introductory Psychology, and PSYC 340 or introduction to linguistics; or permission of instructor ",'PSYC 340',"{prerequisites"": 'PSYC 340'}"""
+297,543,BUSA647D2,1,Prerequisite: BUSA 647D1,'BUSA 647D1',"{prerequisites"": 'BUSA 647D1'}"""
+1094,2574,HISP328,1,"Prerequisite: Successful completion of any Survey of Literature (HISP 241, HISP 242, HISP 243, HISP 244) or permission of the instructor","['|', 'HISP 241', 'HISP 242', 'HISP 243', 'HISP 244']",{}
+1119,1961,EDPC202,1,Prerequisite: EDPC 201 ,'EDPC 201',"{prerequisites"": 'EDPC 201'}"""
+2563,4455,PSYC708D2,1,Prerequisite: PSYC 708D1,'PSYC 708D1',"{prerequisites"": 'PSYC 708D1'}"""
+1607,2828,INFS608,1,Prerequisite: INFS 607,'INFS 607',"{prerequisites"": 'INFS 607'}"""
+461,818,CEGL313,1,"Prerequisites: CEGL 223, or Entrance Placement Test or Permission of the Director",'CEGL 223',"{prerequisites"": 'CEGL 223'}"""
+252,470,BMDE512,1,Prerequisite: Differential equations (MATH 271 or equivalent) or permission of instructor,'MATH 271',"{prerequisites"": 'MATH 271'}"""
+513,897,CGM2590N2,1,Prerequisite: CGM2 590N1,'CGM2 590N1',"{prerequisites"": 'CGM2 590N1'}"""
+431,1004,CHEM503,1,"Prerequisite(s): CHEM 302 and one of BIOL 200 or CHEM 332, or permission of instructor.","['&','CHEM 302' ,['|', 'BIOL 200', 'CHEM 332']]",{}
+1711,2992,ITAL690N2,1,Prerequisite: ITAL 690N1,'ITAL 690N1',"{prerequisites"": 'ITAL 690N1'}"""
+61,141,ANTH403,1,"Prerequisite: ANTH 357 or preferably ANTH 359, or permission of instructor ","['|', 'ANTH 357', 'ANTH 359']",{}
+2510,4362,PSYC333,1,Prerequisite: PSYC 215 ,'PSYC 215',"{prerequisites"": 'PSYC 215'}"""
+2264,3924,NUR2667,1,Prerequisite: NUR2 614,'NUR2 614',"{prerequisites"": 'NUR2 614'}"""
+1444,2482,GEOG491D1,1,Prerequisite: GEOG 381,'GEOG 381',"{prerequisites"": 'GEOG 381'}"""
+2403,4159,PHTH561,1,Prerequisite: PHTH 551,'PHTH 551',"{prerequisites"": 'PHTH 551'}"""
+449,1042,CHLC580,1,"Prerequisites: CACC 520, CMS2 533, CPL2 532 and (CGM2 510 or CHLC 590 or CORG 556 or CPL2 510 or CORG 553)","['&', 'CACC 520', 'CMS2 533', 'CPL2 532', ['|', 'CGMS 510', 'CHLC 590', 'CORG 556', 'CPL2 510', 'CORG 553']]",{}
+257,482,BREE341,1,Prerequisite: BREE 210,'BREE 210',"{prerequisites"": 'BREE 210'}"""
+3,22,ACCT626,1,Prerequisite(s): (INSY 660 OR INSY 662 OR Instructor's approval) AND (MGSC 660 OR MGSC 661 OR Instructor's approval),"['&', ['|', 'INSY 660', 'INSY 662'], ['|', 'MGSC 660', 'MGSC 661']]",{}
+2442,4227,PHYS439,2,Corequisite: PHYS 346,'PHYS 346',"{corequisites"": 'PHYS 346'}"""
+2106,3665,MUPD205,1,Prerequisites: MUPD 204 and permission of the instructor,'MUPD 204',"{prerequisites"": 'MUPD 204'}"""
+2049,3596,MUIN274,1,Prerequisite: MUIN 273,'MUIN 273',"{prerequisites"": 'MUIN 273'}"""
+1271,2191,ENVR495N2,1,Prerequisite: ENVR 495N1.,'ENVR 495N1',"{prerequisites"": 'ENVR 495N1'}"""
+1456,2514,GEOG698D2,1,Prerequisite: GEOG 698D1,'GEOG 698D1',"{prerequisites"": 'GEOG 698D1'}"""
+672,1162,CMS2530,1,Prerequisite: CMS2 505,'CMS2 505',"{prerequisites"": 'CMS2 505'}"""
+1419,3276,MECH565,1,"Prerequisite (Undergraduate): MECH 240, MECH 309 or MATH 317, MECH 331, MECH 341, MECH 346 or permission of the instructor.","['&', 'MECH 240', ['|', 'MECH 309', 'MATH 317'], 'MECH 331', 'MECH 341', 'MECH 346']",{}
+1106,1944,EDKP542,1,Prerequisite: EDKP 395.,'EDKP 395',"{prerequisites"": 'EDKP 395'}"""
+215,468,BMDE507,1,"Prerequisites CHEE 380 (or equivalent), CHEM 212 (or equivalent), and BIOL 201 (or equivalent), or permission of the instructor.","['&', 'CHEE 380', 'CHEM 212', 'BIOL 201']",{}
+1702,2970,ITAL215D2,1,Prerequisite: ITAL 215D1,'ITAL 215D1',"{prerequisites"": 'ITAL 215D1'}"""
+1639,2871,INSY437,1,Prerequisite: MGCR 331,'MGCR 331',"{prerequisites"": 'MGCR 331'}"""
+862,1469,DENT671D2,1,Prerequisite: DENT 671D1,'DENT 671D1',"{prerequisites"": 'DENT 671D1'}"""
+2,9,ACCT451,1,"Prerequisites: MGCR 211, MGCR 341","['&', 'MGCR 211', 'MGCR 341']",{}
+1707,2988,ITAL602N2,1,Prerequisite: ITAL 602N1,'ITAL 602N1',"{prerequisites"": 'ITAL 602N1'}"""
+68,151,ANTH436,1,"Prerequisite: ANTH 338, or ANTH 336, or permission of instructor ","['|', 'ANTH 338', 'ANTH 336']",{}
+1780,3092,MATH242,1,Prerequisite: MATH 141 ,'MATH 141',"{prerequisites"": 'MATH 141'}"""
+1158,2013,EDPE682,1,Prerequisite: EDPE 676 ,'EDPE 676',"{prerequisites"": 'EDPE 676'}"""
+2024,3551,MUHL377,1,Prerequisites: MUHL 286,'MUHL 286',"{prerequisites"": 'MUHL 286'}"""
+258,483,BREE412,1,Prerequisite: BREE 341,'BREE 341',"{prerequisites"": 'BREE 341'}"""
+305,556,BUSA672J3,1,Prerequisite: BUSA 672J2,'BUSA 672J2',"{prerequisites"": 'BUSA 672J2'}"""
+222,364,BIOL303,2,Corequisites: BIOL 202.,'BIOL 202',"{corequisites"": 'BIOL 202'}"""
+2033,3569,MUHL389,1,Prerequisites: MUHL 286,'MUHL 286',"{prerequisites"": 'MUHL 286'}"""
+1771,3081,LSCI451,1,"Prerequisite(s): PARA 438 as a prerequisite or corequisite, and permission of instructor.",'PARA 438',"{prerequisites"": 'PARA 438'}"""
+407,963,CHEM214,1,Prerequisites: CHEM 204 or CHEM 223/CHEM 243.,"['|', 'CHEM 204', 'CHEM 223', 'CHEM 243']",{}
+2323,4026,NUTR701D2,1,Prerequisite: NUTR 701D1,'NUTR 701D1',"{prerequisites"": 'NUTR 701D1'}"""
+1712,2993,ITAL691D2,1,Prerequisite: ITAL 691D1,'ITAL 691D1',"{prerequisites"": 'ITAL 691D1'}"""
+1198,2084,EDSL601,2,Corequisite: EDSL 602,'EDSL 602',"{corequisites"": 'EDSL 602'}"""
+13,39,AEBI427,2,"Corequisite(s): AEBI 421, AEBI 423 and AEBI 425","['&', 'AEBI 421', 'AEBI 423', 'AEBI 425']",{}
+218,472,BMDE521,1,"Prerequisites: MATH 203, MATH 223, MATH 323, one course in computer programming and additional background in Calculus and Probability is required (e.g., MATH 222, MATH 204), or permission of the instructor.","['&', 'MATH 203', 'MATH 323']",{}
+76,165,ANTH575,1,"Prerequisites: ANTH 201, or ANTH 202, or ANTH 203, and ANTH 352 or ANTH 359.","['&', ['|', 'ANTH 201', 'ANTH 202', 'ANTH 203'], ['|', 'ANTH 352', 'ANTH 359']]",{}
+2197,3788,NRSC620,1,Prerequisite: ENVR 630,'ENVR 630',"{prerequisites"": 'ENVR 630'}"""
+687,1179,CMSC204,1,Prerequisite: CMSC 203 ,'CMSC 203',"{prerequisites"": 'CMSC 203'}"""
+334,603,CANS301,1,Prerequisite: CANS 200 or permission of instructor,'CANS 200',"{prerequisites"": 'CANS 200'}"""
+1352,2318,FACC500,1,Prerequisite: FACC 300 or permission of instructor.,'FACC 300',"{prerequisites"": 'FACC 300'}"""
+200,441,BIOL568,1,Prerequisites BIOL 202 or BIOL 302; BIOL 300; BIOL 370; or permission.,"['&', ['|', 'BIOL 202', 'BIOL 302'], 'BIOL 300', 'BIOL 370']",{}
+814,1414,DENT411D2,1,Prerequisite: DENT 411D1,'DENT 411D1',"{prerequisites"": 'DENT 411D1'}"""
+1909,3351,MIME333,1,Prerequisite: MIME 200 ,'MIME 200',"{prerequisites"": 'MIME 200'}"""
+854,2023,EDPE707,1,"Prerequisites: EDPE 704 - Advanced Research Seminar 1, EDPE 705 - Advanced Research Seminar 2, EDPE 706 - Advanced Research Seminar 3","['&', 'EDPE 704', 'EDPE 705', 'EDPE 706']",{}
+2374,4111,PHGY459D2,1,Prerequisite: PHGY 459D1,'PHGY 459D1',"{prerequisites"": 'PHGY 459D1'}"""
+733,1308,CORG560,1,Prerequisite: CORG 555,'CORG 555',"{prerequisites"": 'CORG 555'}"""
+1451,3370,MIME452,1,"Prerequisites MIME 311, MIME341, MIME 352, MIME 362, FACC 300, WCOM 206","['&', 'MIME 311', 'MIME 341', 'MIME 352', 'MIME 362', 'FACC 300', 'WCOM 206']",{}
+1750,4152,PHTH301D2,1,Prerequisite: PHTH 301D1 and PHTH 245; ANAT 315; PHGY 209; ANAT 316; PHGY 210; POTH 225; POTH 250. Students require a valid CPR-AED level HCP certificate before the practical work begins. Required interviews and selection process for this course will be conducted by the McGill Sport Medicine Clinic staff.,"['&', 'PHTH 301D1', 'PHTH 245', 'ANAT 315', 'PHGY 209', 'ANAT 316', 'PHGY 210', 'POTH 225', 'POTH 250']",{}
+492,860,CFIN507,1,Prerequisite: CACC 521,'CACC 521',"{prerequisites"": 'CACC 521'}"""
+828,1428,DENT425D2,1,Prerequisite: DENT 425D1,'DENT 425D1',"{prerequisites"": 'DENT 425D1'}"""
+1072,1881,EDFE406,2,Corequisite: EDEC 405,'EDEC 405',"{corequisites"": 'EDEC 405'}"""
+8,33,ACCT696,1,Prerequisites: (INSY 660 OR INSY 662 OR Instructor's approval) AND (MGSC 660 OR MGSC 661 OR Instructor's approval),"['&', ['|', 'INSY 660', 'INSY 662'], ['|', 'MGSC 660', 'MGSC 661']]",{}
+1894,3324,MGSC603,1,Prerequisite (Undergraduate): MGSC 472,'MGSC 472',"{prerequisites"": 'MGSC 472'}"""
+58,138,ANTH359,1,Prerequisites: ANTH 201 or ANTH 203 or ANTH 210.,"['|', 'ANTH 201', 'ANTH 203', 'ANTH 210']",{}
+27,44,AEMA414,1,Prerequisite: AEMA 310 or equivalent ,'AEMA 310',"{prerequisites"": 'AEMA 310'}"""
+1897,3328,MGSC642D2,1,Prerequisite: MGSC 642D1,'MGSC 642D1',"{prerequisites"": 'MGSC 642D1'}"""
+724,1285,COMS360,1,Prerequisites: COMS 210 or permission of the instructor,'COMS 210',"{prerequisites"": 'COMS 210'}"""
+87,251,ATOC219,1,"Prerequisites: CHEM 110 and CHEM 120, and one of MATH 139 or MATH 140 or MATH 150, or a CEGEP DEC in Science, or permission of instructor.","['&', 'CHEM 110', 'CHEM 120', ['|', 'MATH 139', 'MATH 140', 'MATH 150']]",{}
+1723,3004,JWST282,1,Prerequisite(s): JWST 281 or permission of instructor.,'JWST 281',"{prerequisites"": 'JWST 281'}"""
+1009,2441,GEOG291,1,"Prerequisites: GEOG 201 and one of: GEOG 203, GEOG 210, GEOG 216, GEOG 217, GEOG 272","['&', 'GEOG 201', ['|', 'GEOG 203', 'GEOG 210', 'GEOG 216', 'GEOG 217', 'GEOG 272']]",{}
+246,545,BUSA650,1,"Prerequisite: MBA Core (MGCR 629, MGCR 650, MGCR 651, MGCR 652, and MGCR 653) or (MGCR 613, MGCR 614, MGCR 617, MGCR 618, MGCR 620, MGCR 621, MGCR 622, MGCR 628, MGCR 638, MGCR 639, MGCR 640, and MGCR 642).","['|', ['&', 'MGCR 629', 'MGCR 650', 'MGCR 651', 'MGCR 652', 'MGCR 653'], ['&', 'MGCR 613', 'MGCR 614', 'MGCR 617', 'MGCR 618', 'MGCR 620', 'MGCR 621', 'MGCR 622', 'MGCR 628', 'MGCR 638', 'MGCR 639', 'MGCR 640', 'MGCR 642']]",{}
+1511,3515,MUCO373,1,"Prerequisites: MUHL 184, MUHL 185, MUTH 211 or MUCO 240D1/D2, MUSP 231; or MUHL 186, MUHL 286, MUTH 250 or MUCO 240D1/D2, MUSP 241","['|', ['&', 'MUHL 184', 'MUHL 185', ['|', 'MUTH 211', ['&', 'MUCO 240D1', 'MUCO 240D2']], 'MUSP 231'], ['&', 'MUHL 186', 'MUHL 286', ['|', 'MUTH 250', ['&', 'MUCO 240D1', 'MUCO 240D2']]], 'MUSP 241']",{}
+1862,3289,MGCR372,1,Prerequisite: MGCR 271 or equivalent,'MGCR 271',"{prerequisites"": 'MGCR 271'}"""
+1048,1835,EDEM625N2,1,Prerequisite: EDEM 625N1,'EDEM 625N1',"{prerequisites"": 'EDEM 625N1'}"""
+2164,3736,MUSR631D2,1,Prerequisite: MUSR 631D1.,'MUSR 631D1',"{prerequisites"": 'MUSR 631D1'}"""
+2501,4343,PPOL620D2,1,Prerequisite: PPOL 620D1,'PPOL 620D1',"{prerequisites"": 'PPOL 620D1'}"""
+142,227,ARCH654,2,Corequisite(s): ARCH 653,'ARCH 653',"{corequisites"": 'ARCH 653'}"""
+84,242,ARTH608,1,Prerequisites: ARTH 606 and ARTH 607.,"['&', 'ARTH 606', 'ARTH 607']",{}
+1101,2581,HISP352,1,"Prerequisite: Successful completion of any Survey of Literature (HISP 241, HISP 242, HISP 243, HISP 244) or permission of the instructor.","['|', 'HISP 241', 'HISP 242', 'HISP 243', 'HISP 244']",{}
+391,693,CCTR325,1,Prerequisite: CCTR 225,'CCTR 225',"{prerequisites"": 'CCTR 225'}"""
+2145,3711,MUSP141,1,Prerequisites: Matriculation Music or McGill Conservatory Theory Secondary V or its equivalent. MUSP 140,'MUSP 140',"{prerequisites"": 'MUSP 140'}"""
+2196,3787,NRSC451,2,Corequisites: ANTH or GEOG 451 Society &amp; Development in Africa,'GEOG 451',"{corequisites"": 'GEOG 451'}"""
+1112,1952,EDKP635,1,Prerequisite: EDKP 206 or permission of instructor.,'EDKP 206',"{prerequisites"": 'EDKP 206'}"""
+1516,3528,MUCT315,1,"Prerequisites: MUTH 211, MUSP 229, MUCT 235 and MUGT 215; or MUTH 250, MUSP 240, MUCT 235 and MUGT 215; or permission of instructor","['|', ['&', 'MUTH 211', 'MUSP 229', 'MUCT 235', 'MUGT 215'], ['&', 'MUTH 250', 'MUSP 240', 'MUCT 235', 'MUGT 215']]",{}
+52,129,ANTH326,1,Prerequisite: ANTH 202 or 204 or 205 or 206 or 212 or permission of instructor,"['|', 'ANTH 202', 'ANTH 204', 'ANTH 205', 'ANTH 206', 'ANTH 212']",{}
+1095,2575,HISP332,1,"Prerequisite: Successful completion of any Survey of Literature (HISP 241, HISP 242, HISP 243, HISP 244) or permission of the instructor.  Note: Course taught in Spanish.","['|', 'HISP 241', 'HISP 242', 'HISP 243', 'HISP 244']",{}
+1949,3417,MIME670N2,1,Prerequisite: MIME 670N1,'MIME 670N1',"{prerequisites"": 'MIME 670N1'}"""
+1786,3107,MATH315,1,Prerequisite: MATH 222.,'MATH 222',"{prerequisites"": 'MATH 222'}"""
+294,534,BUSA451D2,1,Prerequisite: BUSA 451D1,'BUSA 451D1',"{prerequisites"": 'BUSA 451D1'}"""
+1600,2815,INDS423J2,1,Prerequisite(s): INDS 423J1,'INDS 423J1',"{prerequisites"": 'INDS 423J1'}"""
+246,455,BIOL632,1,Prerequisites: BIOL 206 and/or permission ,'BIOL 206',"{prerequisites"": 'BIOL 206'}"""
+2032,3567,MUHL388,1,Prerequisites: MUHL 286,'MUHL 286',"{prerequisites"": 'MUHL 286'}"""
+2681,4630,SOCI545,1,Prerequisite: SOCI 234 or equivalent,'SOCI 234',"{prerequisites"": 'SOCI 234'}"""
+1661,2909,ISLA345,1,Prerequisite: ISLA 200 or permission of the instructor.,'ISLA 200',"{prerequisites"": 'ISLA 200'}"""
+1100,2580,HISP347,1,"Prerequisites: Successful completion of one of the Survey of Literature courses (HISP 241, HISP 242, HISP 243, HISP 244), or permission of the instructor","['|', 'HISP 241', 'HISP 242', 'HISP 243', 'HISP 244']",{}
+2178,3759,MUTH322,1,Prerequisite: MUTH 350,'MUTH 350',"{prerequisites"": 'MUTH 350'}"""
+2307,4009,NUTR652,1,Prerequisite: NUTR 651 ,'NUTR 651',"{prerequisites"": 'NUTR 651'}"""
+2093,3650,MUJZ424,1,Prerequisite: MUJZ 423.,'MUJZ 423',"{prerequisites"": 'MUJZ 423'}"""
+811,1411,DENT409J3,1,Prerequisite: DENT 409J2,'DENT 409J2',"{prerequisites"": 'DENT 409J2'}"""
+1001,1750,ECSE571,2,Corequisite: ECSE 533,'ECSE 533',"{corequisites"": 'ECSE 533'}"""
+852,1458,DENT583J2,1,Prerequisite: DENT 583J1,'DENT 583J1',"{prerequisites"": 'DENT 583J1'}"""
+974,2346,FDSC537,1,"Prerequisites: FDSC 211 or LSCI 211, FDSC 230 and FDSC 233 or permission of instructor.","['&', ['|', 'FDSC 211', 'LSCI 211'], 'FDSC 230', 'FDSC 233']",{}
+1731,3014,JWST502,1,Prerequisite: JWST 340 or permission of instructor,'JWST 340',"{prerequisites"": 'JWST 340'}"""
+2411,4175,PHWR500D1,1,Prerequisite: PHWR 300 or permission of an advisor.,'PHWR 300',"{prerequisites"": 'PHWR 300'}"""
+1914,3360,MIME392,1,Prerequisite: 75 credits including MIME 291 ,'MIME 291',"{prerequisites"": 'MIME 291'}"""
+49,126,ANTH319,1,Prerequisite: ANTH 201 or ANTH 202 or HISP 225 or permission of instructor.,"['|', 'ANTH 201', 'ANTH 202', 'HISP 225']",{}
+286,526,BUSA356,2,Corequisite: MGCR 382,'MGCR 382',"{corequisites"": 'MGCR 382'}"""
+2261,3920,NUR2661,1,Prerequisites: NUR2 660 or permission of the instructor.,'NUR2 660',"{prerequisites"": 'NUR2 660'}"""
+19,63,AGEC425,1,"Prerequisites: AEMA 310, AGEC 200 and AGEC 201 or equivalents ","['&', 'AEMA 310', 'AGEC 200', 'AGEC 201']",{}
+99,177,ANTH791D2,1,Prerequisite: ANTH 791D1,'ANTH 791D1',"{prerequisites"": 'ANTH 791D1'}"""
+1188,2054,EDSL254,2,Corequisite: EDFE 255,'EDFE 255',"{corequisites"": 'EDFE 255'}"""
+1424,3284,MECH656,1,"Prerequisites: MECH 452 or MECH 605 or equivalent, and MECH 562 or MECH 610 or equivalent.","['&', ['|', 'MECH 452', 'MECH 605'], ['|', 'MECH 562', 'MECH 610']]",{}
+1665,2914,ISLA365,1,Prerequisite: ISLA 210 or permission of instructor.,'ISLA 210',"{prerequisites"": 'ISLA 210'}"""
+2345,4055,ORGB525,1,Prerequisite (Undergraduate): ORGB 423,'ORGB 423',"{prerequisites"": 'ORGB 423'}"""
+1280,3006,JWST340D1,1,Prerequisite: JWST 200 or JWST 320 or permission of the Hebrew Language Coordinator ,"['|', 'JWST 200', 'JWST 320']",{}
+1132,1978,EDPC679D2,1,Prerequisite: EDPC 679D1,'EDPC 679D1',"{prerequisites"": 'EDPC 679D1'}"""
+858,2038,EDPE726,1,"Prerequisites: EDPE 708 and two of EDPE 721, EDPE 722 or EDPE 723 ","['&', 'EDPE 708', ['|', ['&', 'EDPE 721', 'EDPE 722'],['&', 'EDPE 721', 'EDPE 723'],['&', 'EDPE 722', 'EDPE 723']]]",{}
+2555,4447,PSYC699N2,1,Prerequisite: PSYC 699N1,'PSYC 699N1',"{prerequisites"": 'PSYC 699N1'}"""
+63,143,ANTH410,1,"Prerequisite: ANTH 352 or ANTH 355, or permission of the instructor","['|', 'ANTH 352', 'ANTH 355']",{}
+908,1520,EAST544,1,Prerequisite (Undergraduate): EAST 543 or permission of instructor,'EAST 543',"{prerequisites"": 'EAST 543'}"""
+1019,1782,EDEA407,2,Corequisite: EDFE 407,'EDFE 407',"{corequisites"": 'EDFE 407'}"""
