@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "llmbda"
+version = "0.1.0"
+description = ""
+authors = ["SamZhang02 <sam.zijing.zhang@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.1.3"
+numpy = "^1.26.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
