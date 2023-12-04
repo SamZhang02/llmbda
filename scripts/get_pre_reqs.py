@@ -1,5 +1,6 @@
 import json
 import re
+import os
 from dataclasses import dataclass
 
 
@@ -28,7 +29,7 @@ def run():
 
     index = 1
 
-    with open("./courses-2023-2024.json") as f:
+    with open(os.path.join("dataset", "courses-2023-2024.json")) as f:
         courses = json.load(f)
 
         for course in courses:
@@ -75,7 +76,7 @@ def run():
                 else:
                     to_label.append(course_info)
 
-    with open("./autolabelled.csv", "w") as csv:
+    with open(os.path.join("dataset", "autolabelled.csv"), "w") as csv:
         csv.write("index,course,req_type,requisite,object_tree,json_tree\n")
         for c in autolabelled:
             csv.write(
@@ -84,7 +85,7 @@ def run():
 
         print(f"Auto-labeled {len(autolabelled)} leaves.")
 
-    with open("./to_label.csv", "w") as csv:
+    with open(os.path.join("dataset", "autolabelled.csv"), "w") as csv:
         csv.write("index,course,req_type,requisite,object_tree,json_tree\n")
         for c in to_label:
             csv.write(
