@@ -315,12 +315,11 @@ for i in range(8):
 
         new_df.at[i, 'requisite'] = replace_coursecode(new_df.at[i,'requisite'], rules)
         new_df.at[i, 'object_tree'] = replace_coursecode(new_df.at[i,'object_tree'], rules)
-        # new_df.at[i, 'json_tree'] = replace_coursecode(new_df.at[i,'json_tree'], rules)
-        #
+
         new_df.at[i, 'requisite'] = replace_id(new_df.at[i,'requisite'], rules)
         new_df.at[i, 'object_tree'] = replace_id(new_df.at[i,'object_tree'], rules)
-        # new_df.at[i, 'json_tree'] = replace_id(new_df.at[i,'json_tree'], rules)
+
     total = pd.concat([total, new_df])
 
-total.to_csv(TRAIN_PATH)
+total.to_csv('augmented_train.csv')
 
