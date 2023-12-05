@@ -1,26 +1,33 @@
 import pandas as pd
-import os
 from sklearn.model_selection import train_test_split
+import os
 
-test_path = os.path.join("dataset", "test.csv")
-dev_path = os.path.join("dataset", "validation.csv")
-train_path = os.path.join("dataset", "train.csv")
 
-labelled = pd.read_csv(os.path.join("dataset", "labelled.csv"))
-autolabelled = pd.read_csv(os.path.join("dataset", "autolabelled.csv"))
+data_dir = "dataset" + os.path.sep
+
+
+test_path = data_dir + "test.csv"
+dev_path = data_dir + "validation.csv"
+train_path = data_dir + "train.csv"
+
+labelled = pd.read_csv(data_dir + "labelled.csv")
+autolabelled = pd.read_csv(data_dir + "autolabelled.csv")
 
 labelled = labelled.loc[(labelled["object_tree"] != "[]")]
 autolabelled = autolabelled.loc[(autolabelled["object_tree"] != "[]")]
 autolabelled["json_tree"] = "{}"
 
-autolabelled = autolabelled.sample(frac=0.25, random_state=1)
+autolabelled = autolabelled.sample(frac=0.15, random_state=1)
 
 data = pd.concat([labelled, autolabelled])
 
-train, test = train_test_split(
-    data, test_size=0.2, train_size=0.8, random_state=1, shuffle=True
-)
-train, valid = train_test_split(train, test_size=0.125, random_state=1, shuffle=True)
+train, test = train_test_split(data, test_size=0.35, random_state=1, shuffle=True)
+train, valid = train_test_split(train, test_size=0.15, random_state=1, shuffle=True)
+
+print(len(train))
+print(len(valid))
+print(len(test))
+
 
 train.to_csv(train_path)
 test.to_csv(test_path)
