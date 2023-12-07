@@ -93,9 +93,26 @@ def one_shot(client: OpenAI, dataset: pd.DataFrame):
     reqs = dataset["requisite"]
     expected = dataset["object_tree"]
 
-    extended_prompt = PROMPT
+    predictions = []
 
-    for req, label in zip(reqs, expected):
+    extended_prompt = (
+        PROMPT
+        + """
+    Here's some examples, marked with input and expected output.
+
+    ---INPUT---
+    Prerequisite: PHGY 311   
+    ---OUTPUT---
+    'PHGY 311'
+
+    ---INPUT---
+    Prerequisites: ECSE 205, COMP 206, ECSE 250, and (ECSE 343 or MATH 247) or equivalents.
+    ---OUTPUT---
+    ['&', 'ECSE 205', 'COMP 206', 'ECSE 250', ['|', 'ECSE 343', 'MATH 247']]
+    """
+    )
+
+    for i, (req, label) in enumerate(zip(reqs, expected)):
         completion = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[
@@ -105,8 +122,18 @@ def one_shot(client: OpenAI, dataset: pd.DataFrame):
             temperature=0,
         )
         prediction = completion.choices[0].message.content
+        if prediction is None:
+            raise ValueError("GPT gave none for message content")
         print("Predicted: ", prediction)
         print("Actual: ", label)
+
+        print(f"({i}/{len(reqs)})")
+        prediction = prediction.replace("\n", "")
+        predictions.append(prediction)
+
+    out = {"index": dataset["index"], "predictions": predictions}
+    df = pd.DataFrame(out)
+    df.to_csv(os.path.join("results", "gpt3.5-one-shot.csv"), index=False)
 
 
 def few_shot(client: OpenAI, dataset: pd.DataFrame):
@@ -161,7 +188,8 @@ def main():
     client = OpenAI()
 
     # zero_shot(client, test_set)
-    few_shot(client, test_set)
+    one_shot(client, test_set)
+    # few_shot(client, test_set)
 
 
 if __name__ == "__main__":
