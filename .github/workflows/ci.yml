@@ -21,5 +21,4 @@ jobs:
       
       - name: Validate labelled data
         run: |
-          cd dataset
-          python check.py labelled.csv
+          python scripts/check.py dataset/labelled.csv
