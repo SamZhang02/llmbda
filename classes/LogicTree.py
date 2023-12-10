@@ -21,11 +21,29 @@ class LogicTree:
         self.lst = lst
 
     @staticmethod
-    def is_well_formed(lst:List) -> bool:
+    def is_well_formed(entity:List | str) -> bool:
         """
-        Method to check if a list if a well formed logic tree
+        Method to check if a list if is a well formed logic tree before trying to 
+        instantiate it as the class.
         """
-        return True
+
+        match entity:
+            case str():
+                m = COURSE_CODE_PATTERN.fullmatch(entity)
+                if m is None:
+                    print(f"Invalid course code {entity}")
+
+                return m is not None
+            case list():
+                if entity[0] not in ["&", "|"]:
+                    print(f"Invalid operator {entity[0]}")
+                    return False
+
+                if len(entity) < 3:
+                    print("Tree node must have at least 2 children")
+                    return False
+
+                return all([LogicTree.is_well_formed(child) for child in entity[1:]])
 
     @classmethod
     def from_list(cls, lst:List) -> LogicTree:
@@ -33,7 +51,7 @@ class LogicTree:
         Instantiate a tree from a list
         """
         if not cls.is_well_formed(lst):
-            raise NotWellFormedTree(f"{lst} is not a well formed tree")
+            raise NotWellFormedTree(f"Cannot instantiate LogicTreee, {lst} is not a well formed tree")
 
         return cls(LogicNode(lst), lst)
 
@@ -91,10 +109,16 @@ if __name__ == "__main__":
     tree3 = LogicTree.from_list(["|", ["&", "COMP 202", "COMP 250"], ["&", "COMP 202", "COMP 206"]])
     tree4 = LogicTree.from_list(["|", ["&", "COMP 302", "COMP 250"], ["&", "COMP 202", "COMP 206"]])
 
-    print(tree1.equals(tree2))
-    print(tree1.equals(tree3))
-    print(tree2.equals(tree3))
-    print(tree3.equals(tree4))
+    assert tree1.equals(tree2) is False
+    assert tree1.equals(tree3) is True
+    assert tree2.equals(tree3) is False
+    assert tree3.equals(tree4) is False
 
+    assert LogicTree.is_well_formed("COMP 202") is True
+    assert LogicTree.is_well_formed("hello") is False
+    assert LogicTree.is_well_formed(["&", "COMP 202"]) is False
+    assert LogicTree.is_well_formed(["&", "COMP 202", "COMP 250"]) is True
+    assert LogicTree.is_well_formed(["&", "COMP 202J1", "COMP 250"]) is True
+    assert LogicTree.is_well_formed(["&", ["|", "COMP 202", "COMP 302"], "COMP 250"]) is True
 
 
