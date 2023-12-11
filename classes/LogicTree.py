@@ -4,6 +4,7 @@ from typing import List,Dict
 from itertools import product
 from enum import Enum
 import re 
+import zss
 
 COURSE_CODE_PATTERN = re.compile(r"([A-Z0-9]{4} [0-9]{3}(?:D1|D2|N1|N2|J1|J2|J3)?)")
 
@@ -62,7 +63,7 @@ class LogicTree:
         """Given a logic tree, compute whether the logical proposition is true of false based on a set of rules."""
         return self.root._compute_truth(rules)
 
-    def equals(self, other:LogicTree) -> bool:
+    def __eq__(self, other:LogicTree) -> bool:
         """Given two logic trees, compute whether they are logically equivalent."""
         self_course_codes = set(self.get_coursecodes())
         other_course_codes = set(other.get_coursecodes())
@@ -80,39 +81,52 @@ class LogicTree:
 
         return True
 
+    def get_leaves(self) -> List[str]:
+        return self.root._get_leaves()
+
+    def get_height(self) -> int:
+        return self.root._get_height()
+
     def complexity(self) -> TreeComplexity:
         """
-        Method to compute the complexity of a tree, returns an enum
+        Method to compute the complexity of a tree, scales with number of leaves and tree height.
         """
 
-        number_of_courses = len(set(self.get_coursecodes()))
+        number_of_leaves = len(self.get_leaves())
+        height = self.get_height()
 
-        if number_of_courses < 3:
+        complexity_score = (number_of_leaves * height-1)
+
+        if complexity_score <= 4:
             return TreeComplexity.TRIVIAL
 
-        elif number_of_courses < 5:
+        elif complexity_score <= 15:
             return TreeComplexity.MEDIUM
 
         else:
             return TreeComplexity.HARD
 
-    def distance_to(self,other:LogicTree) -> int:
+
+    def distance_to(self,other:LogicTree, return_operations=False) -> int:
         """
         Method to compute the edit distance of two trees
         """
-        ...
+        return zss.simple_distance(self.root, other.root, 
+                                   get_children=LogicNode.get_children, 
+                                   get_label=LogicNode.get_value,
+                                   return_operations=return_operations)
 
 
 if __name__ == "__main__":
-    tree1 = LogicTree.from_list(["&", "COMP 202", ["|", "COMP 250", "COMP 206"]])
-    tree2 = LogicTree.from_list(["&", "COMP 202", ["&", "COMP 250", "COMP 206"]])
-    tree3 = LogicTree.from_list(["|", ["&", "COMP 202", "COMP 250"], ["&", "COMP 202", "COMP 206"]])
+    tree1 = LogicTree.from_list(["&", "COMP 202", ["|", "COMP 250", "COMP 206"]]) 
+    tree2 = LogicTree.from_list(["&", "COMP 202", ["&", "COMP 250", "COMP 206"]]) 
+    tree3 = LogicTree.from_list(["|", ["&", "COMP 202", "COMP 250"], ["&", "COMP 202", "COMP 206"]]) 
     tree4 = LogicTree.from_list(["|", ["&", "COMP 302", "COMP 250"], ["&", "COMP 202", "COMP 206"]])
 
-    assert tree1.equals(tree2) is False
-    assert tree1.equals(tree3) is True
-    assert tree2.equals(tree3) is False
-    assert tree3.equals(tree4) is False
+    assert (tree1 == tree2) is False
+    assert (tree1 == tree3) is True
+    assert (tree2 == tree3) is False
+    assert (tree3 == tree4) is False
 
     assert LogicTree.is_well_formed("COMP 202") is True
     assert LogicTree.is_well_formed("hello") is False
@@ -120,5 +134,15 @@ if __name__ == "__main__":
     assert LogicTree.is_well_formed(["&", "COMP 202", "COMP 250"]) is True
     assert LogicTree.is_well_formed(["&", "COMP 202J1", "COMP 250"]) is True
     assert LogicTree.is_well_formed(["&", ["|", "COMP 202", "COMP 302"], "COMP 250"]) is True
+
+    assert tree1.distance_to(tree2) == 1
+    assert tree3.distance_to(tree4) == 1
+    assert tree1.distance_to(tree3) == 5
+
+    assert sorted(tree1.get_leaves()) == sorted(["COMP 202", "COMP 250", "COMP 206"])
+    assert sorted(tree3.get_leaves()) == sorted(["COMP 202", "COMP 250", "COMP 202", "COMP 206"])
+
+    assert tree1.get_height() == 3 
+    assert tree3.get_height() == 3 
 
 

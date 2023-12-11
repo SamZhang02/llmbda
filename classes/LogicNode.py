@@ -18,6 +18,26 @@ class LogicNode:
             self.is_leaf = False
 
 
+    def get_children(self) -> List[LogicNode]:
+        return self.children
+
+    def get_value(self) -> str:
+        return self.value
+
+    def _get_leaves(self) -> List[str]:
+
+        if self.is_leaf:
+            return [self.value]
+
+        return reduce(lambda a,b: a + b, [child._get_leaves() for child in self.children])
+    
+    def _get_height(self) -> int:
+
+        if self.is_leaf:
+            return 1
+
+        return 1 + max([child._get_height() for child in self.children])
+
     def __str__(self) -> str:
         """Prints the node and its children for debugging, J
         with bracket syntax similar to Lisp"""
