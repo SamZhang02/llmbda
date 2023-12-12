@@ -16,6 +16,9 @@ python-dotenv = "^1.0.0"
 zss = "^1.2.0"
 
 
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.7"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
