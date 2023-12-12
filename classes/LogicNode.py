@@ -35,8 +35,8 @@ class LogicNode:
 
         if self.is_leaf:
             return 1
-
         return 1 + max([child._get_height() for child in self.children])
+
 
     def __str__(self) -> str:
         """Prints the node and its children for debugging, J

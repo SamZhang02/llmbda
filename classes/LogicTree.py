@@ -1,9 +1,9 @@
 from __future__ import annotations
-from LogicNode import LogicNode
+from classes.LogicNode import LogicNode
 from typing import List,Dict
 from itertools import product
 from enum import Enum
-import re 
+import re
 import zss
 
 COURSE_CODE_PATTERN = re.compile(r"([A-Z0-9]{4} [0-9]{3}(?:D1|D2|N1|N2|J1|J2|J3)?)")
@@ -24,7 +24,7 @@ class LogicTree:
     @staticmethod
     def is_well_formed(entity:List | str) -> bool:
         """
-        Method to check if a list if is a well formed logic tree before trying to 
+        Method to check if a list if is a well formed logic tree before trying to
         instantiate it as the class.
         """
 
@@ -111,16 +111,16 @@ class LogicTree:
         """
         Method to compute the edit distance of two trees
         """
-        return zss.simple_distance(self.root, other.root, 
-                                   get_children=LogicNode.get_children, 
+        return zss.simple_distance(self.root, other.root,
+                                   get_children=LogicNode.get_children,
                                    get_label=LogicNode.get_value,
                                    return_operations=return_operations)
 
 
 if __name__ == "__main__":
-    tree1 = LogicTree.from_list(["&", "COMP 202", ["|", "COMP 250", "COMP 206"]]) 
-    tree2 = LogicTree.from_list(["&", "COMP 202", ["&", "COMP 250", "COMP 206"]]) 
-    tree3 = LogicTree.from_list(["|", ["&", "COMP 202", "COMP 250"], ["&", "COMP 202", "COMP 206"]]) 
+    tree1 = LogicTree.from_list(["&", "COMP 202", ["|", "COMP 250", "COMP 206"]])
+    tree2 = LogicTree.from_list(["&", "COMP 202", ["&", "COMP 250", "COMP 206"]])
+    tree3 = LogicTree.from_list(["|", ["&", "COMP 202", "COMP 250"], ["&", "COMP 202", "COMP 206"]])
     tree4 = LogicTree.from_list(["|", ["&", "COMP 302", "COMP 250"], ["&", "COMP 202", "COMP 206"]])
 
     assert (tree1 == tree2) is False
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     assert sorted(tree1.get_leaves()) == sorted(["COMP 202", "COMP 250", "COMP 206"])
     assert sorted(tree3.get_leaves()) == sorted(["COMP 202", "COMP 250", "COMP 202", "COMP 206"])
 
-    assert tree1.get_height() == 3 
-    assert tree3.get_height() == 3 
+    assert tree1.get_height() == 3
+    assert tree3.get_height() == 3
 
 
