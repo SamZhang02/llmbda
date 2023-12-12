@@ -161,7 +161,8 @@ if __name__ == "__main__":
 
     print(f"Results:{output}")
 
-    outpath = Path(args.log_result) if args.log_result else Path(f"eval/{args.model_name}.txt")
-    outpath.parent.mkdir(exist_ok=True, parents=True)
-    with open(outpath, "w") as fobj:
-        fobj.write(output)
+    if args.log_result:
+        outpath = Path(args.log_result)
+        outpath.parent.mkdir(exist_ok=True, parents=True)
+        with open(outpath, "w") as fobj:
+            fobj.write(output)
