@@ -133,7 +133,7 @@ if __name__ == "__main__":
     predictions = all_df[args.pred_text_field]
 
     if predictions.isna().any():
-        raise Exception(f"Some columns were not joined {predictions.isna().any()}, did you forget an inference?")
+        raise Exception(f"Some rows were not joined {predictions.isna().any()}, did you forget an inference?")
 
     results = eval(ans.to_list(), predictions.to_list())
 
