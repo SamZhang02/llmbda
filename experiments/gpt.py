@@ -1,9 +1,10 @@
-from openai import OpenAI
-import pandas as pd
-import os
 import json
-import tiktoken
+import os
+
 import dotenv
+import pandas as pd
+import tiktoken
+from openai import OpenAI
 from typing import Literal
 
 # --- Utils ---
@@ -109,7 +110,7 @@ def one_shot(
     Here's some examples, marked with input and expected output.
 
     ---INPUT---
-    Prerequisite: PHGY 311   
+    Prerequisite: PHGY 311
     ---OUTPUT---
     'PHGY 311'
 

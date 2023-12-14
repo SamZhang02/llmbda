@@ -1,7 +1,8 @@
-import pandas as pd
 import os
-import re
 import random
+import re
+
+import pandas as pd
 
 SUBJECTS = [
     "ACCT",

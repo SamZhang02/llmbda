@@ -1,6 +1,6 @@
+import ast
 import csv
 import re
-import ast
 import sys
 
 COURSE_CODE_PATTERN = re.compile(r"([A-Z0-9]{4} [0-9]{3}(?:D1|D2|N1|N2|J1|J2|J3)?)")
