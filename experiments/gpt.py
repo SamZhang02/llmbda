@@ -1,10 +1,10 @@
-from openai import OpenAI
-import pandas as pd
-import os
 import json
-import tiktoken
+import os
+
 import dotenv
-import itertools
+import pandas as pd
+import tiktoken
+from openai import OpenAI
 
 # --- Utils ---
 
