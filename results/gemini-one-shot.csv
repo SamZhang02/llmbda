@@ -1,7 +1,7 @@
 index,predictions
 3515,"['|', ['&', 'MUHL 184', 'MUHL 185', 'MUTH 211', 'MUSP 231'], ['&', 'MUHL 186', 'MUHL 286', 'MUTH 250', 'MUSP 241']]"
 74,"['|', ['|', 'HISP 218', 'equivalent'], ['|', 'MATH 203', 'AEMA 310', 'equivalent']]"
-2458,"        ---OUTPUT---        ['|',         ['&', 'ENVR 201', 'GEOG 203'],         ['&', 'ENVR 201', 'ENVR 200'],         ['&', 'ENVR 201', 'ESYS 200']]"
+2458,"['|',         ['&', 'ENVR 201', 'GEOG 203'],         ['&', 'ENVR 201', 'ENVR 200'],         ['&', 'ENVR 201', 'ESYS 200']]"
 126,"['|', 'ANTH 201', 'ANTH 202', 'HISP 225']"
 1203,['COMP 251']
 914,['CHEE 400']
