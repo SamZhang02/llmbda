@@ -9,7 +9,7 @@ from typing import Literal
 # --- Utils ---
 
 # TODO: Refine the prompt
-PROMPT = "Given a list of course requirements, parse it into a logic expression tree structure. Each node is represented by an string or array. Non-leaf nodes are arrays, and represent nodes for logical operators. The first element in the array is a logical operator (AND represented by '&', OR being represented by '|'), the rest of the elements in the array are the children. Logical expressions should only ever be in the first element of the array. Every non-leaf node should have at least two children. Leaf nodes are strings, never arrays. Leaf node values are the course codes in the requirements. These are only allowed to be valid course codes, not any arbitrary string. As such, you should ignore things like 'equivalent' or 'permission of instructor'. A valid course code is 4 uppercase/numeric characters followed by a space, then a 3 digit number. Use single quotes for strings. If there is only  Do not give any explanation, just output the parsed data."
+PROMPT = "Given a list of course requirements, parse it into a logic expression tree structure. Each node is represented by an string or array. Non-leaf nodes are arrays, and represent nodes for logical operators. The first element in the array is a logical operator (AND represented by '&', OR being represented by '|'), the rest of the elements in the array are the children. Logical expressions should only ever be in the first element of the array. Every non-leaf node should have at least two children. Leaf nodes are strings, never arrays. Leaf node values are the course codes in the requirements. These are only allowed to be valid course codes, not any arbitrary string. As such, you should ignore things like 'equivalent' or 'permission of instructor'. A valid course code is 4 uppercase/numeric characters followed by a space, then a 3 digit number. Use single quotes for strings. Do not give any explanation, just output the parsed data."
 
 
 def get_json_message_data(file: str):
@@ -93,7 +93,7 @@ def zero_shot(
     df.to_csv(os.path.join("results", f"{model}-zero-shot.csv"), index=False)
 
 
-def one_shot(
+def few_shot(
     client: OpenAI,
     dataset: pd.DataFrame,
     model: Literal["gpt-3.5-turbo-1106", "gpt-4-1106-preview"] = "gpt-3.5-turbo-1106",
@@ -109,14 +109,29 @@ def one_shot(
     Here's some examples, marked with input and expected output.
 
     ---INPUT---
-    Prerequisite: PHGY 311   
+    Prerequisite: PHGY 311
     ---OUTPUT---
     'PHGY 311'
+
+    ---INPUT---
+    Prerequisite: URBP 622 or permission of instructor.
+    ---OUTPUT---
+    'URBP 622'
 
     ---INPUT---
     Prerequisites: ECSE 205, COMP 206, ECSE 250, and (ECSE 343 or MATH 247) or equivalents.
     ---OUTPUT---
     ['&', 'ECSE 205', 'COMP 206', 'ECSE 250', ['|', 'ECSE 343', 'MATH 247']]
+
+    ---INPUT---
+    Prerequisites: MATH 202 or (MATH 250 and MATH 206)
+    ---OUTPUT---
+    ['|', 'MATH 202', ['&', 'MATH 250', 'MATH 206']]
+
+    ---INPUT---
+    Prerequisites: Any of two in the following: MATH 202, MATH 250, MATH 333 or permission of instructor
+    ---OUTPUT---
+    ['|', ['&', 'MATH 202', 'MATH 250'], ['&', 'MATH 250', 'MATH 333'], ['&', 'MATH 202', 'MATH 333']]
     """
     )
 
@@ -141,10 +156,10 @@ def one_shot(
 
     out = {"index": dataset["index"], "predictions": predictions}
     df = pd.DataFrame(out)
-    df.to_csv(os.path.join("results", f"{model}-one-shot.csv"), index=False)
+    df.to_csv(os.path.join("results", f"{model}-few-shot.csv"), index=False)
 
 
-def few_shot(client: OpenAI, dataset: pd.DataFrame):
+def finetuned(client: OpenAI, dataset: pd.DataFrame):
     model_name = os.environ.get("FINETUNE_MODEL_NAME")
     if model_name is None:
         print("Finetune model name not present in environment variables, skipping.")
@@ -176,7 +191,7 @@ def few_shot(client: OpenAI, dataset: pd.DataFrame):
 
     out = {"index": dataset["index"], "predictions": predictions}
     df = pd.DataFrame(out)
-    df.to_csv(os.path.join("results", "gpt3.5-few-shot.csv"), index=False)
+    df.to_csv(os.path.join("results", "gpt3.5-finetuned.csv"), index=False)
 
 
 def main():
@@ -195,8 +210,8 @@ def main():
 
     client = OpenAI()
 
-    zero_shot(client, test_set, model="gpt-4-1106-preview")
-    one_shot(client, test_set, model="gpt-4-1106-preview")
+    # zero_shot(client, test_set, model="gpt-4-1106-preview")
+    few_shot(client, test_set, model="gpt-4-1106-preview")
     # few_shot(client, test_set)
 
 
