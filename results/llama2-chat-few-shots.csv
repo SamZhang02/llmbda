@@ -1,4 +1,4 @@
-index,prediction
+index,predictions
 3515,"['|', ['&', ['|', ['&', 'MUHL 184', 'MUHL 185'], ['&', 'MUTH 211', 'MUCO 240D1/D2'], ['&', 'MUSP 231']], ['&', ['|', ['&', 'MUHL 186', 'MUHL 286'], ['&', 'MUTH 250', 'MUCO 240D1/D2'], ['&', 'MUSP 241']] ]"
 74,"['&', 'HISP 218', ['|', 'MATH 203', ['|', 'AEMA 310', 'equivalent']]]"
 2458," ['&', 'ENVR 201', ['|', 'GEOG 203', ['|', 'ENVR 200', ['|', 'ESYS 200', 'equivalent']]]]"

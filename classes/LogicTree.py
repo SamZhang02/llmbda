@@ -39,6 +39,10 @@ class LogicTree:
 
                 return m is not None
             case list():
+                if not entity:
+                    print(f"Emptyl ist")
+                    return False
+
                 if entity[0] not in ["&", "|"]:
                     print(f"Invalid operator {entity[0]}")
                     return False

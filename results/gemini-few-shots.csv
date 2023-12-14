@@ -115,7 +115,6 @@ index,predictions
 2575,"['|', 'HISP 241', 'HISP 242', 'HISP 243', 'HISP 244']"
 661,"['|', ['&', 'CCFA 627', 'exemption by examination'], ['&', 'CCFA 655', 'exemption by examination']]"
 410,"['|', 'BIOL 215', ['&', 'ENVR 200', 'ENVR 202']]"
-51,"['|', 'AEMA 102', ['|', 'MATH 141', 'higher level calculus course'], '00UP']"
 50,"['|', 'AEPH 112', 'AEPH 113', 'PHYS 101', 'PHYS 131', ['\'', '00UR'], 'permission of instructor']"
 3193,"['|', 'MATH 576', ['&', 'MATH 456', 'permission of instructor']]"
 3604,'MUIN 251'
@@ -124,6 +123,7 @@ index,predictions
 1004,"['&', 'CHEM 302', ['|', 'BIOL 200', 'CHEM 332']]"
 478,['AEMA 305']
 965,"['|', 'CHEM 212', 'equivalent.']"
+51,"['|', 'AEMA 102', ['|', 'MATH 141', 'higher level calculus course'], '00UP']"
 3853,['NUR1 332']
 4620,'SOCI 210'
 123,"['|', 'ANTH 202', 'ANTH 205', 'ANTH 206', 'ANTH 212', 'permission of instructor']"

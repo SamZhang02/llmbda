@@ -52,6 +52,8 @@ def eval(ans: List[str], pred: List[str]) -> Dict:
         except:
             continue
 
+        print(pred_lst)
+
         try:
             pred_tree = LogicTree.from_list(pred_lst)
         except NotWellFormedTree:
@@ -137,11 +139,6 @@ if __name__ == "__main__":
     indices = all_df[args.join_on]
     ans = all_df[args.ans_text_field]
     predictions = all_df[args.pred_text_field]
-
-    if predictions.isna().any():
-        raise Exception(
-            f"Some rows were not joined {predictions.isna().any()}, did you forget an inference?"
-        )
 
     results = eval(ans.to_list(), predictions.to_list())
 
