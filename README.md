@@ -15,5 +15,62 @@ We observe that LLMs performed well in these tasks, LLMs can understand logical 
 
 Our findings suggests that there may be potential downstream engineering and research use cases for LLMs for semantic related tasks, given its understanding of logic. 
 
+## Environment Setup
+### Prerequisites
 
+#### Prompt engineering scripts 
+These make calls to the official OpenAI and Google APIs, and do not have specific system requiremenets. 
 
+#### Fine-tuning Llama2  
+System requirements:
+- Ubuntu (Some libraries used in huggingface's Transformer's API require Linux)
+- CUDA (torch devices are set to CUDA)
+
+### Virutal Environment
+Dependency management is done using [poetry](https://python-poetry.org/docs/basic-usage/), dependencies can be installed via:
+
+```shell
+poetry install
+```
+
+To run a script, use: 
+
+```shell
+poetry run python3 <?.py>
+```
+
+## Training 
+Experiment scritps are located under `/experiments`, each experiment have their own scritpt. Only the Llama finetuning requires local trainning. 
+
+### Llama fine-tune scripts 
+Make note of the Llama fine tune scripts, where it uses the `sft_finetune.py` scripts from Huggingface. To run it with the same options as the experiment, run the bash script.
+
+```shell
+experiments/llama2/finetune.sh
+````
+
+Additonally, you can experiment with different options in the bash script. 
+
+#### Handling CUDA OOM
+Our setup ran on a single RTX 3060 12GB. To reduce memory usage, try reducing the batch size in the bash script. 
+
+## Evaluation
+Evaluation is pipelines with the `eval.py` script. Simply run `eval.py` with desired options 
+
+```shell
+model_name the name of the model 
+label_path             The path where the correct labeled csv is located 
+pred_path              The path where the predictions csv is located 
+--log_result           Option to indicate whether we save the result in a text file. Default is False. 
+--ans_text_field       Column name of the correct labels in the labeled csv. Default is 'object_tree'.
+--pred_text_field      Column name of the correct labels in the prediction csv. Default is 'predictions'.
+--join_on              The key column name to join the two csv on. Default is 'index'.
+```
+
+a sample eval script is located in the `justfile`, you can run it with 
+
+```shell
+just eval {{model_name}} {{pred_path}}
+```
+## Project Report 
+For a comprehensive understanding of our project, methodologies, and detailed results, please refer to our [project report](https://github.com/SamZhang02/report/Report.pdf).
