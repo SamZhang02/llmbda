@@ -5,7 +5,7 @@ import google.generativeai as genai
 import pandas as pd
 from dotenv import load_dotenv
 
-PROMPT = "Given a list of course requirements, parse it into a logic expression tree structure. Each node is represented by an string or array. Non-leaf nodes are arrays, and represent nodes for logical operators. The first element in the array is a logical operator (AND represented by '&', OR being represented by '|'), the rest of the elements in the array are the children. Logical expressions should only ever be in the first element of the array. Leaf nodes are strings, never arrays. Leaf node values are the course codes in the requirements. These are only allowed to be valid course codes, not any arbitrary string. A valid course code is 4 uppercase/numeric characters followed by a space, then a 3 digit number. Use single quotes for strings."
+PROMPT = "Parse the following list of course requirements into a logic expression tree structure. Each node is represented by an string or array. Non-leaf nodes are arrays, and represent nodes for logical operators. The first element in the array is a logical operator. AND should be represented by '&', and OR should be represented by '|'. The rest of the elements in the array are the children. Logical expressions should only ever be in the first element of the array. Every non-leaf node should have at least two children. Leaf nodes are strings, never arrays. Leaf node values are the course codes in the requirements. These are only allowed to be valid course codes, not any arbitrary string. As such, you should ignore things like 'equivalent' or 'permission of instructor', these should never be included in the output. A valid course code is 4 uppercase/numeric characters followed by a space, then a 3 digit number. Use single quotes for strings. If there is only a single node in the tree (one leaf) just output the course code by itself as a string, not a single element array.  Do not give any explanation, just output the parsed data."
 
 
 class Model:
@@ -17,7 +17,7 @@ class Model:
         genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
         config = {
-            "temperature": 0.9,
+            "temperature": 0,
             "top_p": 1,
             "top_k": 1,
             "max_output_tokens": 2048,
@@ -69,6 +69,7 @@ class Model:
                 predictions.append(prediction)
             except Exception as e:
                 print(f"error: {e}")
+                predictions.append("")
                 continue
 
         out = {"index": dataset["index"], "predictions": predictions}
@@ -85,16 +86,31 @@ class Model:
             PROMPT
             + """
         Here's some examples, marked with input and expected output.
-    
+
         ---INPUT---
-        Prerequisite: PHGY 311   
+        Prerequisite: PHGY 311
         ---OUTPUT---
         'PHGY 311'
-    
+
+        ---INPUT---
+        Prerequisite: URBP 622 or permission of instructor.
+        ---OUTPUT---
+        'URBP 622'
+
         ---INPUT---
         Prerequisites: ECSE 205, COMP 206, ECSE 250, and (ECSE 343 or MATH 247) or equivalents.
         ---OUTPUT---
         ['&', 'ECSE 205', 'COMP 206', 'ECSE 250', ['|', 'ECSE 343', 'MATH 247']]
+
+        ---INPUT---
+        Prerequisites: MATH 202 or (MATH 250 and MATH 206)
+        ---OUTPUT---
+        ['|', 'MATH 202', ['&', 'MATH 250', 'MATH 206']]
+
+        ---INPUT---
+        Prerequisites: Any of two in the following: MATH 202, MATH 250, MATH 333 or permission of instructor
+        ---OUTPUT---
+        ['|', ['&', 'MATH 202', 'MATH 250'], ['&', 'MATH 250', 'MATH 333'], ['&', 'MATH 202', 'MATH 333']]
         """
         )
 
@@ -113,7 +129,7 @@ class Model:
 
         out = {"index": dataset["index"], "predictions": predictions}
         df = pd.DataFrame(out)
-        df.to_csv(os.path.join("results", "gemini-one-shot.csv"), index=False)
+        df.to_csv(os.path.join("results", "gemini-few-shot.csv"), index=False)
 
 
 if __name__ == "__main__":
@@ -124,5 +140,5 @@ if __name__ == "__main__":
     test_data_path = os.path.join("dataset", "test.csv")
     test_set = pd.read_csv(test_data_path)
 
-    # print(model.zero_shot(test_set))
-    print(model.one_shot(test_set))
+    print(model.zero_shot(test_set))
+    # print(model.one_shot(test_set))
