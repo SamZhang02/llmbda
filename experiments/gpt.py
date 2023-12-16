@@ -9,7 +9,6 @@ from typing import Literal
 
 # --- Utils ---
 
-# TODO: Refine the prompt
 PROMPT = "Given a list of course requirements, parse it into a logic expression tree structure. Each node is represented by an string or array. Non-leaf nodes are arrays, and represent nodes for logical operators. The first element in the array is a logical operator (AND represented by '&', OR being represented by '|'), the rest of the elements in the array are the children. Logical expressions should only ever be in the first element of the array. Every non-leaf node should have at least two children. Leaf nodes are strings, never arrays. Leaf node values are the course codes in the requirements. These are only allowed to be valid course codes, not any arbitrary string. As such, you should ignore things like 'equivalent' or 'permission of instructor'. A valid course code is 4 uppercase/numeric characters followed by a space, then a 3 digit number. Use single quotes for strings. Do not give any explanation, just output the parsed data."
 
 
