@@ -6,6 +6,9 @@ alias f := fmt
 fmt:
   ruff format . && isort .
 
+deps:
+  poetry install --no-root
+
 validate:
   poetry run python3 dataset/check.py dataset/labelled.csv
 
