@@ -33,10 +33,16 @@ Dependency management is done using [poetry](https://python-poetry.org/docs/basi
 poetry install
 ```
 
-To run a script, use: 
+To run a single script, use: 
 
 ```shell
 poetry run python3 <?.py>
+```
+
+To enter activate the virtual environment for your shell, run:
+
+```shell
+poetry shell
 ```
 
 ## Training 
