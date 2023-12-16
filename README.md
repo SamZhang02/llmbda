@@ -54,6 +54,11 @@ Additonally, you can experiment with different options in the bash script.
 #### Handling CUDA OOM
 The script already specified memory efficient training (4 bit quantization + PEFT), our setup ran on a single RTX 3060 12GB. To further reduce memory usage, try reducing the batch size in the bash script. 
 
+## Inferences 
+Inferences with GPT and Gemini can be done with their corresponding scripts under `/experiments`, ensure that you have a valid API key. 
+
+Llama inferences can be done locally by running `llama2_chat.py` for the chat instruct llama2-chat model, and `llama2_finetuned.py` for the finetuned model. The latter script assumes that you have a finetuned model locally, with the default model path being the same directory. 
+
 ## Evaluation
 Evaluation is pipelines with the `eval.py` script. Simply run `eval.py` with desired options 
 
