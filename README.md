@@ -58,7 +58,7 @@ Our setup ran on a single RTX 3060 12GB. To reduce memory usage, try reducing th
 Evaluation is pipelines with the `eval.py` script. Simply run `eval.py` with desired options 
 
 ```shell
-model_name the name of the model 
+model_name             the name of the model 
 label_path             The path where the correct labeled csv is located 
 pred_path              The path where the predictions csv is located 
 --log_result           Option to indicate whether we save the result in a text file. Default is False. 
