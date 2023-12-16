@@ -6,7 +6,7 @@ Welcome to the  repository for the McGill University COMP550 Natural Language Pr
 </p>
 
 <p align="center">
-    <a href="https://github.com/SamZhang02/report/Report.pdf">Project Report</a>
+    <a href="./report/Report.pdf">Project Report</a>
 </p>
 
 Since late 2022, large language models (LLMs) like ChatGPT have gained popularity in research and industry uses due to their ability to perform diverse natural language processing tasks with human-like proficiency. In this study, we investigate the ability to understand logic of various large language models, including open-source ones like Llama 2 and closed-source models such as GPT and Gemini, on the task of parsing semi-formal natural language into propositional logic. Our analysis compared different alignment methods: zero-shot and few-shot prompting, and supervised fine-tuning. 
@@ -84,4 +84,4 @@ a sample eval script is located in the `justfile`, you can run it with
 just eval {{model_name}} {{pred_path}}
 ```
 ## Project Report 
-For a comprehensive understanding of our project, methodologies, and detailed results, please refer to our [project report](https://github.com/SamZhang02/report/Report.pdf).
+For a comprehensive understanding of our project, methodologies, and detailed results, please refer to our [project report](./report/Report.pdf).
