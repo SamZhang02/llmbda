@@ -52,7 +52,7 @@ experiments/llama2/finetune.sh
 Additonally, you can experiment with different options in the bash script. 
 
 #### Handling CUDA OOM
-Our setup ran on a single RTX 3060 12GB. To reduce memory usage, try reducing the batch size in the bash script. 
+The script already specified memory efficient training (4 bit quantization + PEFT), our setup ran on a single RTX 3060 12GB. To further reduce memory usage, try reducing the batch size in the bash script. 
 
 ## Evaluation
 Evaluation is pipelines with the `eval.py` script. Simply run `eval.py` with desired options 
