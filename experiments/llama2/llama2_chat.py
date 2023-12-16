@@ -76,7 +76,7 @@ parser.add_argument('--model')
 
 args = parser.parse_args()
 
-test_data_path = "./test.csv" if not args.path else args.path
+test_data_path = "../../dataset/test.csv" if not args.path else args.path
 model = "meta-llama/Llama-2-7b-chat-hf" if not args.model else args.model
 
 tokenizer = AutoTokenizer.from_pretrained(model)
