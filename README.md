@@ -66,7 +66,7 @@ Inferences with GPT and Gemini can be done with their corresponding scripts unde
 Llama inferences can be done locally by running `llama2_chat.py` for the chat instruct llama2-chat model, and `llama2_finetuned.py` for the finetuned model. The latter script assumes that you have a finetuned model locally, with the default model path being the same directory. 
 
 ## Evaluation
-Evaluation is pipelines with the `eval.py` script. Simply run `eval.py` with desired options 
+Evaluation is pipelined with the `eval.py` script. Simply run `eval.py` with desired options 
 
 ```shell
 model_name             the name of the model 
